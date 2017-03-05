@@ -7,6 +7,19 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.2/howler.js"></script>
 	<script type="text/paperscript" canvas="myCanvas">
 
+	var textHeightStart = view.size.height *0.1;
+	var textWidthStart = view.size.width * 0.3;
+
+	var text = new PointText({
+    point: [textWidthStart, textHeightStart],
+    content: 'Press Any(alfanumerical) Key',
+    fillColor: 'white',
+    fontFamily: 'Courier New',
+    fontWeight: 'bold',
+    fontSize: 32
+});
+
+
 	var keyData = {
 		q: {
 			color: "purple",
@@ -250,6 +263,7 @@
 			keyData[event.key].sound.play();
 
 			circles.push(newCircle);
+			text.fillColor = 'black';
 		}
 	}
 
